@@ -1,15 +1,15 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: WP-FFPC\n"
 "POT-Creation-Date: 2016-04-21 17:14+0200\n"
-"PO-Revision-Date: 2016-04-21 15:44+0200\n"
+"PO-Revision-Date: 2016-04-21 17:14+0200\n"
 "Last-Translator: Gabriele Lauricella <gab.lau@gmail.com>\n"
 "Language-Team: Gabriele Lauricella <gab.lau@gmail.com>\n"
+"Language: it_IT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.8.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: wp-ffpc.php\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: wp-ffpc-abstract.php:381
 msgid "Default : "
-msgstr ""
+msgstr "Predefinito :"
 
 #: wp-ffpc-abstract.php:464
 msgid ""
@@ -32,46 +32,46 @@ msgstr ""
 
 #: wp-ffpc-abstract.php:479
 msgid "Donation for "
-msgstr ""
+msgstr "Donazione per"
 
 #: wp-ffpc-abstract.php:481
 msgid "Donate via PayPal"
-msgstr ""
+msgstr "Dona con PayPal"
 
 #: wp-ffpc-abstract.php:501
-#, php-format
+#, fuzzy, php-format
 msgid " – updating network option %s"
-msgstr ""
+msgstr "Aggiornamento tema: %s"
 
 #: wp-ffpc-abstract.php:505
-#, php-format
+#, fuzzy, php-format
 msgid "- updating option %s"
-msgstr ""
+msgstr "Aggiornamento in corso"
 
 #: wp-ffpc-abstract.php:516
-#, php-format
+#, fuzzy, php-format
 msgid "- getting network option %s"
-msgstr ""
+msgstr "Errore nell'ottenere la struttura della tabella %s"
 
 #: wp-ffpc-abstract.php:520
-#, php-format
+#, fuzzy, php-format
 msgid " – getting option %s"
-msgstr ""
+msgstr "Errore nell'ottenere la struttura della tabella %s"
 
 #: wp-ffpc-abstract.php:533
-#, php-format
+#, fuzzy, php-format
 msgid " – deleting network option %s"
-msgstr ""
+msgstr "Amministratore del network: %s"
 
 #: wp-ffpc-abstract.php:537
-#, php-format
+#, fuzzy, php-format
 msgid " – deleting option %s"
-msgstr ""
+msgstr "eliminazione del file allegato..."
 
 #: wp-ffpc-abstract.php:614
 #, php-format
 msgid "%s"
-msgstr ""
+msgstr "%s"
 
 #: wp-ffpc-class.php:126
 #, php-format
@@ -83,31 +83,35 @@ msgstr ""
 
 #: wp-ffpc-class.php:134
 msgid "APC"
-msgstr ""
+msgstr "APC"
 
 #: wp-ffpc-class.php:135
 msgid "APCu"
-msgstr ""
+msgstr "APCu"
 
 #: wp-ffpc-class.php:136
 msgid "PHP Memcache"
-msgstr ""
+msgstr "PHP Memcache"
 
 #: wp-ffpc-class.php:137
 msgid "PHP Memcached"
-msgstr ""
+msgstr "PHP Memcached"
 
 #: wp-ffpc-class.php:138
 msgid "Redis (experimental, it will break!)"
 msgstr ""
 
 #: wp-ffpc-class.php:152
+#, fuzzy
 msgid "flush cache"
 msgstr ""
+"Importante: Non dimenticare di svuotare la cache usando WP Super Cache "
+"quando attivi o disattivi la modalità di manutenzione."
 
 #: wp-ffpc-class.php:153
+#, fuzzy
 msgid "only modified post"
-msgstr ""
+msgstr "Può essere modificato solo dall'admin o se vuoto"
 
 #: wp-ffpc-class.php:154
 msgid "modified post and all related taxonomies"
@@ -142,11 +146,11 @@ msgstr ""
 
 #: wp-ffpc-class.php:174
 msgid "do not use timed precache"
-msgstr ""
+msgstr "non utilizzare il precache temporizzato"
 
 #: wp-ffpc-class.php:221
 msgid "WP-FFPC Settings"
-msgstr ""
+msgstr "WP-FFPC Impostazioni"
 
 #: wp-ffpc-class.php:226
 msgid ""
@@ -221,19 +225,20 @@ msgstr ""
 
 #: wp-ffpc-class.php:393
 msgid "nginx example"
-msgstr ""
+msgstr "esempio nginx"
 
 #: wp-ffpc-class.php:443
 msgid "Settings saved."
-msgstr ""
+msgstr "Impostazioni salvate."
 
 #: wp-ffpc-class.php:450
+#, fuzzy
 msgid "Plugin options deleted."
-msgstr ""
+msgstr "OPZIONI CANCELLATE!"
 
 #: wp-ffpc-class.php:457
 msgid "Cache flushed."
-msgstr ""
+msgstr "Cache svuotata."
 
 #: wp-ffpc-class.php:464
 msgid ""
@@ -243,15 +248,15 @@ msgstr ""
 
 #: wp-ffpc-class.php:472
 msgid " settings"
-msgstr ""
+msgstr " impostazioni"
 
 #: wp-ffpc-class.php:475
 msgid "Driver: "
-msgstr ""
+msgstr "Driver: "
 
 #: wp-ffpc-class.php:480
 msgid "<strong>Backend status:</strong><br />"
-msgstr ""
+msgstr "<strong>Stato Backend:</strong><br />"
 
 #: wp-ffpc-class.php:490
 msgid "<span class=\"error-msg\">down</span><br />"
@@ -268,20 +273,21 @@ msgid ""
 msgstr ""
 
 #: wp-ffpc-class.php:513
+#, fuzzy
 msgid "Set cache type"
-msgstr ""
+msgstr "Tipo di cache:"
 
 #: wp-ffpc-class.php:516
 msgid "Select backend"
-msgstr ""
+msgstr "Selezionare un backend:"
 
 #: wp-ffpc-class.php:522
 msgid "Select backend storage driver"
-msgstr ""
+msgstr "Selezionare il driver di backend"
 
 #: wp-ffpc-class.php:526
 msgid "Expiration time for posts"
-msgstr ""
+msgstr "Tempo di scadenza per Articoli e Pagine"
 
 #: wp-ffpc-class.php:530
 msgid ""
@@ -290,16 +296,18 @@ msgid ""
 msgstr ""
 
 #: wp-ffpc-class.php:534
+#, fuzzy
 msgid "Browser cache expiration time of posts"
-msgstr ""
+msgstr "Tempo di scadenza cache (secondi)"
 
 #: wp-ffpc-class.php:538
 msgid "Sets validity time of posts/pages/singles for the browser cache."
 msgstr ""
 
 #: wp-ffpc-class.php:542
+#, fuzzy
 msgid "Expiration time for taxonomy"
-msgstr ""
+msgstr "Tempo di scadenza cache (secondi)"
 
 #: wp-ffpc-class.php:546
 msgid ""
@@ -307,8 +315,9 @@ msgid ""
 msgstr ""
 
 #: wp-ffpc-class.php:550
+#, fuzzy
 msgid "Browser cache expiration time of taxonomy"
-msgstr ""
+msgstr "Tempo di scadenza cache (secondi)"
 
 #: wp-ffpc-class.php:554
 msgid "Sets validity time of taxonomy for the browser cache."
@@ -316,15 +325,16 @@ msgstr ""
 
 #: wp-ffpc-class.php:558
 msgid "Expiration time for home"
-msgstr ""
+msgstr "Tempo di scadenza per Homepage"
 
 #: wp-ffpc-class.php:562
 msgid "Sets validity time of home on server side."
 msgstr ""
 
 #: wp-ffpc-class.php:566
+#, fuzzy
 msgid "Browser cache expiration time of home"
-msgstr ""
+msgstr "Tempo di scadenza cache (secondi)"
 
 #: wp-ffpc-class.php:570
 msgid "Sets validity time of home for the browser cache."
@@ -332,23 +342,25 @@ msgstr ""
 
 #: wp-ffpc-class.php:574
 msgid "Charset"
-msgstr ""
+msgstr "Codifica di caratteri"
 
 #: wp-ffpc-class.php:578
 msgid "Charset of HTML and XML (pages and feeds) data."
 msgstr ""
 
 #: wp-ffpc-class.php:582
+#, fuzzy
 msgid "Cache invalidation method"
-msgstr ""
+msgstr "Metodo di spedizione:"
 
 #: wp-ffpc-class.php:588
 msgid "Select cache invalidation method."
 msgstr ""
 
 #: wp-ffpc-class.php:604
+#, fuzzy
 msgid "Invalidate on comment actions"
-msgstr ""
+msgstr "Azioni Multiple"
 
 #: wp-ffpc-class.php:608
 msgid "Trigger cache invalidation when a comments is posted, edited, trashed. "
@@ -356,7 +368,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:612
 msgid "Data prefix"
-msgstr ""
+msgstr "Prefisso dati"
 
 #: wp-ffpc-class.php:616
 msgid ""
@@ -368,7 +380,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:620
 msgid "Meta prefix"
-msgstr ""
+msgstr "Prefisso meta"
 
 #: wp-ffpc-class.php:624
 msgid ""
@@ -379,7 +391,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:628
 msgid "Key scheme"
-msgstr ""
+msgstr "Schema Chiave"
 
 #: wp-ffpc-class.php:632
 msgid ""
@@ -391,7 +403,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:641
 msgid "SHA1 hash key"
-msgstr ""
+msgstr "Hash Chiavi in SHA1"
 
 #: wp-ffpc-class.php:645
 msgid ""
@@ -404,11 +416,11 @@ msgstr ""
 
 #: wp-ffpc-class.php:654
 msgid "Debug & in-depth settings"
-msgstr ""
+msgstr "Debug & Impostazioni Avanzate"
 
 #: wp-ffpc-class.php:655
 msgid "Notes"
-msgstr ""
+msgstr "Note"
 
 #: wp-ffpc-class.php:656
 msgid ""
@@ -436,8 +448,9 @@ msgid "Add X-Cache-Engine HTTP header to HTTP responses."
 msgstr ""
 
 #: wp-ffpc-class.php:676
+#, fuzzy
 msgid "Add HTML debug comment"
-msgstr ""
+msgstr "Aggiungere un nuovo commento"
 
 #: wp-ffpc-class.php:680
 msgid ""
@@ -451,7 +464,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:691
 msgid "Enable cache for logged in users"
-msgstr ""
+msgstr "Abilitare la cache per gli utenti registrati"
 
 #: wp-ffpc-class.php:695
 msgid "Cache pages even if user is logged in."
@@ -459,67 +472,71 @@ msgstr ""
 
 #: wp-ffpc-class.php:699
 msgid "Excludes"
-msgstr ""
+msgstr "Esclusioni"
 
 #: wp-ffpc-class.php:704
 msgid "Exclude home"
-msgstr ""
+msgstr "Escludi Homepage"
 
 #: wp-ffpc-class.php:705
 msgid "Exclude feeds"
-msgstr ""
+msgstr "Escludi Feed"
 
 #: wp-ffpc-class.php:706
 msgid "Exclude archives"
-msgstr ""
+msgstr "Escludi Archivi"
 
 #: wp-ffpc-class.php:707
 msgid "Exclude pages"
-msgstr ""
+msgstr "Escludi Pagine"
 
 #: wp-ffpc-class.php:708
+#, fuzzy
 msgid "Exclude singulars"
-msgstr ""
+msgstr "Escludi"
 
 #: wp-ffpc-class.php:709
 msgid "Dynamic requests"
-msgstr ""
+msgstr "Richieste dinamiche"
 
 #: wp-ffpc-class.php:710
 msgid "WooCommerce"
-msgstr ""
+msgstr "WooCommerce"
 
 #: wp-ffpc-class.php:717
 msgid "Never cache home."
-msgstr ""
+msgstr "Nessuna cache per la homepage."
 
 #: wp-ffpc-class.php:721
 msgid "Never cache feeds."
-msgstr ""
+msgstr "Nessuna cache per i Feed."
 
 #: wp-ffpc-class.php:725
 msgid "Never cache archives."
-msgstr ""
+msgstr "Nessuna cache per gli Archivi."
 
 #: wp-ffpc-class.php:729
 msgid "Never cache pages."
-msgstr ""
+msgstr "Nessuna cache per le Pagine."
 
 #: wp-ffpc-class.php:733
+#, fuzzy
 msgid "Never cache singulars."
-msgstr ""
+msgstr "Cache"
 
 #: wp-ffpc-class.php:737
+#, fuzzy
 msgid "Exclude every URL with \"?\" in it."
-msgstr ""
+msgstr "Escludi"
 
 #: wp-ffpc-class.php:742
 msgid "Exclude dynamic WooCommerce page."
-msgstr ""
+msgstr "Escludere la pagine dinamiche di WooCommerce."
 
 #: wp-ffpc-class.php:750
+#, fuzzy
 msgid "Exclude based on cookies"
-msgstr ""
+msgstr "Escludi"
 
 #: wp-ffpc-class.php:754
 msgid ""
@@ -552,12 +569,13 @@ msgid ""
 msgstr ""
 
 #: wp-ffpc-class.php:782
+#, fuzzy
 msgid "Backend server settings"
-msgstr ""
+msgstr "Impostazioni di backend"
 
 #: wp-ffpc-class.php:785
 msgid "Hosts"
-msgstr ""
+msgstr "Host"
 
 #: wp-ffpc-class.php:790
 msgid ""
@@ -580,16 +598,19 @@ msgid ""
 msgstr ""
 
 #: wp-ffpc-class.php:799
+#, fuzzy
 msgid "Authentication: username"
-msgstr ""
+msgstr "Autenticazione non riuscita"
 
 #: wp-ffpc-class.php:804
+#, fuzzy
 msgid "Username for authentication with backends"
-msgstr ""
+msgstr "Nome utente"
 
 #: wp-ffpc-class.php:808
+#, fuzzy
 msgid "Authentication: password"
-msgstr ""
+msgstr "Autenticazione non riuscita"
 
 #: wp-ffpc-class.php:813
 msgid ""
@@ -599,11 +620,12 @@ msgstr ""
 
 #: wp-ffpc-class.php:816
 msgid "Memcached specific settings"
-msgstr ""
+msgstr "Impostazioni specifiche Memcached"
 
 #: wp-ffpc-class.php:818
+#, fuzzy
 msgid "Enable memcached binary mode"
-msgstr ""
+msgstr "Abilita la modalit&agrave; assistita"
 
 #: wp-ffpc-class.php:822
 msgid ""
@@ -616,7 +638,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:833
 msgid "Precache schedule"
-msgstr ""
+msgstr "Pianificazione precache"
 
 #: wp-ffpc-class.php:839
 msgid "Schedule autorun for precache with WP-Cron"
@@ -624,7 +646,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:860
 msgid "No precache log was found!"
-msgstr ""
+msgstr "Non è stato trovato alcun registro precache!"
 
 #: wp-ffpc-class.php:863
 msgid "Time of run: "
@@ -632,7 +654,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:887
 msgid "Save Changes"
-msgstr ""
+msgstr "Salva modifiche"
 
 #: wp-ffpc-class.php:897 wp-ffpc-class.php:903 wp-ffpc-class.php:919
 #: wp-ffpc-class.php:930
@@ -641,11 +663,11 @@ msgstr ""
 
 #: wp-ffpc-class.php:898
 msgid "Empty cache"
-msgstr ""
+msgstr "Svuota la cache"
 
 #: wp-ffpc-class.php:899
 msgid "Reset settings"
-msgstr ""
+msgstr "Azzerare impostazioni"
 
 #: wp-ffpc-class.php:907
 msgid ""
@@ -657,7 +679,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:910
 msgid "Pre-cache"
-msgstr ""
+msgstr "Pre-cache"
 
 #: wp-ffpc-class.php:914
 msgid ""
@@ -670,7 +692,7 @@ msgstr ""
 
 #: wp-ffpc-class.php:922
 msgid "Clear cache"
-msgstr ""
+msgstr "Elimina Cache"
 
 #: wp-ffpc-class.php:925
 msgid ""
@@ -680,35 +702,37 @@ msgstr ""
 
 #: wp-ffpc-class.php:933
 msgid "Reset options"
-msgstr ""
+msgstr "Ripristina le opzioni"
 
 #: wp-ffpc-class.php:936
+#, fuzzy
 msgid "Reset settings to defaults."
-msgstr ""
+msgstr "Reimposta impostazioni"
 
 #: wp-ffpc-class.php:947
 msgid "Cache type"
-msgstr ""
+msgstr "Tipo di cache:"
 
 #: wp-ffpc-class.php:948
 msgid "Debug & in-depth"
-msgstr ""
+msgstr "Debug & Avanzate"
 
 #: wp-ffpc-class.php:949
 msgid "Cache exceptions"
-msgstr ""
+msgstr "Eccezioni della cache"
 
 #: wp-ffpc-class.php:950
 msgid "Backend settings"
-msgstr ""
+msgstr "Impostazioni di backend"
 
 #: wp-ffpc-class.php:951
 msgid "Precache & precache log"
-msgstr ""
+msgstr "Pre-cache & Registro"
 
 #: wp-ffpc-class.php:968
+#, fuzzy
 msgid "Scheduling WP-CRON event"
-msgstr ""
+msgstr "Ultima esecuzione giornaliera di WP-Cron: %s"
 
 #: wp-ffpc-class.php:972
 msgid "Clearing WP-CRON scheduled hook "
@@ -716,11 +740,11 @@ msgstr ""
 
 #. Plugin Name of the plugin/theme
 msgid "WP-FFPC"
-msgstr ""
+msgstr "WP-FFPC"
 
 #. Plugin URI of the plugin/theme
 msgid "https://github.com/petermolnar/wp-ffpc"
-msgstr ""
+msgstr "https://github.com/petermolnar/wp-ffpc"
 
 #. Description of the plugin/theme
 msgid "WordPress in-memory full page cache plugin"
@@ -728,8 +752,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "Peter Molnar <hello@petermolnar.eu>"
-msgstr ""
+msgstr "Peter Molnar <hello@petermolnar.eu>"
 
 #. Author URI of the plugin/theme
 msgid "http://petermolnar.eu/"
-msgstr ""
+msgstr "http://petermolnar.eu/"
