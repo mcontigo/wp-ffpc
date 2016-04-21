@@ -69,6 +69,16 @@ else {
 	return false;
 }
 
+/* no cache for WooCommerce URL patterns */
+if ( isset($wp_ffpc_config['nocache_woocommerce']) && !empty($wp_ffpc_config['nocache_woocommerce']) && 
+     isset($wp_ffpc_config['nocache_woocommerce_url']) && trim($wp_ffpc_config['nocache_woocommerce_url']) ) {
+	$pattern = sprintf('#%s#', trim($wp_ffpc_config['nocache_woocommerce_url']));
+	if ( preg_match($pattern, $wp_ffpc_uri) ) {
+		__wp_ffpc_debug__ ( "Cache exception based on WooCommenrce URL regex pattern matched, skipping");
+		return false;
+	}
+}
+
 /* no cache for uri with query strings, things usually go bad that way */
 if ( isset($wp_ffpc_config['nocache_dyn']) && !empty($wp_ffpc_config['nocache_dyn']) && stripos($wp_ffpc_uri, '?') !== false ) {
 	__wp_ffpc_debug__ ( 'Dynamic url cache is disabled ( url with "?" ), skipping');

@@ -3,10 +3,12 @@
 Plugin Name: WP-FFPC
 Plugin URI: https://github.com/petermolnar/wp-ffpc
 Description: WordPress in-memory full page cache plugin
-Version: 1.11.0
+Version: 1.11.1
 Author: Peter Molnar <hello@petermolnar.eu>
 Author URI: http://petermolnar.eu/
 License: GPLv3
+Text Domain: wp-ffpc
+Domain Path: /languages/
 */
 
 /*  Copyright 2010-2014 Peter Molnar ( hello@petermolnar.eu )
@@ -54,6 +56,8 @@ $wp_ffpc_defaults = array (
 	'nocache_page'        => false,
 	'nocache_cookies'     => false,
 	'nocache_dyn'         => true,
+	'nocache_woocommerce' => true,
+	'nocache_woocommerce_url' => '',
 	'nocache_url'         => '^/wp-',
 	'nocache_comment'     => '',
 	'response_header'     => false,

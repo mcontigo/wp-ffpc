@@ -3,8 +3,8 @@ Contributors: cadeyrn, ameir, haroldkyle, plescheff, dkcwd, IgorCode
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=XU3DG7LLA76WC
 Tags: cache, page cache, full page cache, nginx, memcached, apc, speed
 Requires at least: 3.0
-Tested up to: 4.4.1
-Stable tag: 1.11.0
+Tested up to: 4.5
+Stable tag: 1.11.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -82,6 +82,7 @@ Many thanks for donations, contributors, supporters, testers & bug reporters:
 * Gausden Barry
 * Maksim Bukreyeu
 * Lissome Hong Kong Limited
+* [Gabriele Lauricella](https://github.com/gablau)
 
 == Installation ==
 
@@ -130,6 +131,13 @@ Version numbering logic:
 * every A. indicates BIG changes.
 * every .B version indicates new features.
 * every ..C indicates bugfixes for A.B version.
+
+= 1.11.1 =
+*2016-04-21*
+
+* exclude cache for WooCommerce
+* fix load textdomain
+* add Italian (it_IT) translation 
 
 = 1.11.0 =
 *2016-01-15*
