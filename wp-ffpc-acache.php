@@ -8,7 +8,7 @@ defined('ABSPATH') or die("Walk away.");
 
 function __wp_ffpc_debug__ ( $text ) {
 	if ( defined('WP_FFPC__DEBUG_MODE') && WP_FFPC__DEBUG_MODE == true)
-		error_log ( __FILE__ . ': ' . $text );
+		error_log ( 'WP_FFPC_ACache' . ': ' . $text );
 }
 
 /* check for WP cache enabled*/
@@ -155,7 +155,7 @@ foreach ( $wp_ffpc_keys as $internal => $key ) {
 	$value = $wp_ffpc_backend->get ( $key );
 
 	if ( ! $value ) {
-		__wp_ffpc_debug__("No cached data foundd");
+		__wp_ffpc_debug__("No cached data found");
 		/* does not matter which is missing, we need both, if one fails, no caching */
 		wp_ffpc_start();
 		return;
