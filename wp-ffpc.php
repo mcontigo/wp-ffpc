@@ -69,4 +69,4 @@ $wp_ffpc_defaults = array (
 	'hashkey'             => false,
 );
 
-$wp_ffpc = new WP_FFPC ( 'wp-ffpc', '1.10.1', 'WP-FFPC', $wp_ffpc_defaults, 'PeterMolnar_WordPressPlugins_wp-ffpc_HU' , 'WP-FFPC' , 'FA3NT7XDVHPWU' );
+$wp_ffpc = new WP_FFPC ( 'wp-ffpc', '1.11.2', 'WP-FFPC', $wp_ffpc_defaults, 'PeterMolnar_WordPressPlugins_wp-ffpc_HU' , 'WP-FFPC' , 'FA3NT7XDVHPWU' );
