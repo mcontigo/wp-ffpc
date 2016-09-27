@@ -414,7 +414,8 @@ class WP_FFPC extends WP_FFPC_ABSTRACT {
 			$page_wc_checkout=str_replace( home_url(), '', wc_get_page_permalink( 'checkout' ) );
 			$page_wc_myaccount=str_replace( home_url(), '', wc_get_page_permalink( 'myaccount' ) );
 			$page_wc_cart=str_replace( home_url(), '', wc_get_page_permalink( 'cart' ) );
-			$this->options['nocache_woocommerce_url'] =  '^'.$page_wc_checkout.'|^'.$page_wc_myaccount.'|^'.$page_wc_cart;
+			$wcapi='^/wc-api|^/\?wc-api=';
+			$this->options['nocache_woocommerce_url'] =  '^'.$page_wc_checkout.'|^'.$page_wc_myaccount.'|^'.$page_wc_cart.'|'.$wcapi;
       
 		} else {
 			$this->options['nocache_woocommerce_url'] = '';
