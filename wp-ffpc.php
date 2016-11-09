@@ -44,7 +44,9 @@ $wp_ffpc_defaults = array (
 	'expire_taxonomy'     => 300,
 	'invalidation_method' => 0,
 	'prefix_meta'         => 'meta-',
+	'prefix_meta_mobile'         => 'meta-mobile-',
 	'prefix_data'         => 'data-',
+	'prefix_data_mobile'         => 'data-mobile-',
 	'charset'             => 'utf-8',
 	'log'                 => true,
 	'cache_type'          => 'memcached',
@@ -69,4 +71,4 @@ $wp_ffpc_defaults = array (
 	'hashkey'             => false,
 );
 
-$wp_ffpc = new WP_FFPC ( 'wp-ffpc', '1.11.2', 'WP-FFPC', $wp_ffpc_defaults, 'PeterMolnar_WordPressPlugins_wp-ffpc_HU' , 'WP-FFPC' , 'FA3NT7XDVHPWU' );
+$wp_ffpc = new WP_FFPC ( 'wp-ffpc', '1.12.0', 'WP-FFPC', $wp_ffpc_defaults, 'PeterMolnar_WordPressPlugins_wp-ffpc_HU' , 'WP-FFPC' , 'FA3NT7XDVHPWU' );

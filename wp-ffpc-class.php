@@ -618,7 +618,7 @@ class WP_FFPC extends WP_FFPC_ABSTRACT {
 				</dd>
 
 				<dt>
-					<label for="prefix_data"><?php _e('Mobile Data prefix', 'wp-ffpc'); ?></label>
+					<label for="prefix_data"><?php _e('Mobile data prefix', 'wp-ffpc'); ?></label>
 				</dt>
 				<dd>
 					<input type="text" name="prefix_data" id="prefix_data" value="<?php echo $this->options['prefix_data_mobile']; ?>" />
@@ -634,7 +634,7 @@ class WP_FFPC extends WP_FFPC_ABSTRACT {
 				</dd>
 
 				<dt>
-					<label for="prefix_meta"><?php _e('Mobile eta prefix', 'wp-ffpc'); ?></label>
+					<label for="prefix_meta"><?php _e('Mobile meta prefix', 'wp-ffpc'); ?></label>
 				</dt>
 				<dd>
 					<input type="text" name="prefix_meta" id="prefix_meta" value="<?php echo $this->options['prefix_meta_mobile']; ?>" />
