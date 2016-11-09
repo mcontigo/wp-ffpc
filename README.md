@@ -135,6 +135,12 @@ Version numbering logic:
 * every .B version indicates new features.
 * every ..C indicates bugfixes for A.B version.
 
+= 1.12.0 =
+*2016-11-09*
+
+* Add new class to detect mobile devices
+* Create a cache to mobile and desktop version
+
 = 1.11.1 =
 *2016-04-21*
 

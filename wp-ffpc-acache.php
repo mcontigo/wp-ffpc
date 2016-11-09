@@ -145,7 +145,18 @@ if ( $wp_ffpc_backend->status() === false ) {
 }
 
 /* try to get data & meta keys for current page */
-$wp_ffpc_keys = array ( 'meta' => $wp_ffpc_config['prefix_meta'], 'data' => $wp_ffpc_config['prefix_data'] );
+
+/* include the mobile detect */
+include_once ('backends/mobile-detect.php');
+$mobile_detect = new Mobile_Detect;
+
+/* verify if mobile device (phones or tablets). */
+if ($mobile_detect->isMobile() ) {
+    $wp_ffpc_keys = array ( 'meta' => $wp_ffpc_config['prefix_meta']. 'mobile_', 'data' => $wp_ffpc_config['prefix_data']. 'mobile_' );
+} else {
+    $wp_ffpc_keys = array ( 'meta' => $wp_ffpc_config['prefix_meta'], 'data' => $wp_ffpc_config['prefix_data']);
+}
+
 $wp_ffpc_values = array();
 
 __wp_ffpc_debug__ ( "Trying to fetch entries");
@@ -457,11 +468,16 @@ function wp_ffpc_callback( $buffer ) {
 
 	/* add generation info is option is set, but only to HTML */
 	if ( $wp_ffpc_config['generate_time'] == '1' && stripos($buffer, '</body>') ) {
-		global $wp_ffpc_gentime;
+		global $wp_ffpc_gentime,
+               $mobile_detect;
+
+        /* verify the device type to output into the generation stats */
+        $device_type = $mobile_detect -> isMobile() ? 'mobile': 'desktop';
+
 		$mtime = explode ( " ", microtime() );
 		$wp_ffpc_gentime = ( $mtime[1] + $mtime[0] )- $wp_ffpc_gentime;
 
-		$insertion = "\n<!-- WP-FFPC cache generation stats" . "\n\tgeneration time: ". round( $wp_ffpc_gentime, 3 ) ." seconds\n\tgeneraton UNIX timestamp: ". time() . "\n\tgeneraton date: ". date( 'c' ) . "\n\tgenerator server: ". $_SERVER['SERVER_ADDR'] . " -->\n";
+		$insertion = "\n<!-- WP-FFPC cache generation stats" . "\n\tgeneration time: ". round( $wp_ffpc_gentime, 3 ) ." seconds\n\tgeneraton UNIX timestamp: ". time() . "\n\tgeneraton date: ". date( 'c' ) . "\n\tDevice Type: " . $device_type . "\n\tgenerator server: ". $_SERVER['SERVER_ADDR'] . " -->\n";
 		$index = stripos( $buffer , '</body>' );
 
 		$to_store = substr_replace( $buffer, $insertion, $index, 0);
