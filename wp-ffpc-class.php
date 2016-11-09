@@ -618,10 +618,26 @@ class WP_FFPC extends WP_FFPC_ABSTRACT {
 				</dd>
 
 				<dt>
+					<label for="prefix_data"><?php _e('Mobile Data prefix', 'wp-ffpc'); ?></label>
+				</dt>
+				<dd>
+					<input type="text" name="prefix_data" id="prefix_data" value="<?php echo $this->options['prefix_data_mobile']; ?>" />
+					<span class="description"><?php _e('Prefix for HTML content keys, can be used in nginx.<br /><strong>WARNING</strong>: changing this will result the previous cache to becomes invalid!<br />If you are caching with nginx, you should update your nginx configuration and reload nginx after changing this value.', 'wp-ffpc'); ?></span>
+				</dd>
+
+				<dt>
 					<label for="prefix_meta"><?php _e('Meta prefix', 'wp-ffpc'); ?></label>
 				</dt>
 				<dd>
 					<input type="text" name="prefix_meta" id="prefix_meta" value="<?php echo $this->options['prefix_meta']; ?>" />
+					<span class="description"><?php _e('Prefix for meta content keys, used only with PHP processing.<br /><strong>WARNING</strong>: changing this will result the previous cache to becomes invalid!', 'wp-ffpc'); ?></span>
+				</dd>
+
+				<dt>
+					<label for="prefix_meta"><?php _e('Mobile eta prefix', 'wp-ffpc'); ?></label>
+				</dt>
+				<dd>
+					<input type="text" name="prefix_meta" id="prefix_meta" value="<?php echo $this->options['prefix_meta_mobile']; ?>" />
 					<span class="description"><?php _e('Prefix for meta content keys, used only with PHP processing.<br /><strong>WARNING</strong>: changing this will result the previous cache to becomes invalid!', 'wp-ffpc'); ?></span>
 				</dd>
 

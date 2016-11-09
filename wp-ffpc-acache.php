@@ -149,13 +149,10 @@ if ( $wp_ffpc_backend->status() === false ) {
 /* include the mobile detect */
 include_once ('backends/mobile-detect.php');
 $mobile_detect = new Mobile_Detect;
-
 /* verify if mobile device (phones or tablets). */
-if ($mobile_detect->isMobile() ) {
-    $wp_ffpc_keys = array ( 'meta' => $wp_ffpc_config['prefix_meta']. 'mobile_', 'data' => $wp_ffpc_config['prefix_data']. 'mobile_' );
-} else {
-    $wp_ffpc_keys = array ( 'meta' => $wp_ffpc_config['prefix_meta'], 'data' => $wp_ffpc_config['prefix_data']);
-}
+$wp_ffpc_keys =  ($mobile_detect->isMobile() ?
+    array ( 'meta' => $wp_ffpc_config['prefix_meta_mobile'], 'data' => $wp_ffpc_config['prefix_data_mobile'] ) :
+    array ( 'meta' => $wp_ffpc_config['prefix_meta'], 'data' => $wp_ffpc_config['prefix_data']);
 
 $wp_ffpc_values = array();
 
@@ -320,6 +317,8 @@ function wp_ffpc_callback( $buffer ) {
 	global $wp_ffpc_backend;
 	/* check is it's a redirect */
 	global $wp_ffpc_redirect;
+    /* check is it's a mobile version*/
+    global $mobile_detect;
 
 	/* no is_home = error, WordPress functions are not availabe */
 	if (!function_exists('is_home'))
@@ -468,8 +467,7 @@ function wp_ffpc_callback( $buffer ) {
 
 	/* add generation info is option is set, but only to HTML */
 	if ( $wp_ffpc_config['generate_time'] == '1' && stripos($buffer, '</body>') ) {
-		global $wp_ffpc_gentime,
-               $mobile_detect;
+		global $wp_ffpc_gentime;
 
         /* verify the device type to output into the generation stats */
         $device_type = $mobile_detect -> isMobile() ? 'mobile': 'desktop';
@@ -496,10 +494,10 @@ function wp_ffpc_callback( $buffer ) {
 	 */
 	$to_store = apply_filters( 'wp-ffpc-to-store', $to_store );
 
-	$prefix_meta = $wp_ffpc_backend->key ( $wp_ffpc_config['prefix_meta'] );
+	$prefix_meta = ($mobile_detect -> isMobile())? $wp_ffpc_backend->key ( $wp_ffpc_config['prefix_meta_mobile'] ): $wp_ffpc_backend->key ( $wp_ffpc_config['prefix_meta'] );
 	$wp_ffpc_backend->set ( $prefix_meta, $meta );
 
-	$prefix_data = $wp_ffpc_backend->key ( $wp_ffpc_config['prefix_data'] );
+	$prefix_data = ($mobile_detect -> isMobile())? $wp_ffpc_backend->key ( $wp_ffpc_config['prefix_data_mobile'] ): $wp_ffpc_backend->key ( $wp_ffpc_config['prefix_data'] );
 	$wp_ffpc_backend->set ( $prefix_data , $to_store );
 
 	if ( !empty( $meta['status'] ) && $meta['status'] == 404 ) {
