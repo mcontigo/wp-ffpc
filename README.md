@@ -86,6 +86,7 @@ Many thanks for donations, contributors, supporters, testers & bug reporters:
 * 7th Veil, LLC
 * Julia Harsch
 * Grant Berntsen
+* [Glaydston Veloso](https://github.com/glaydston)
 
 == Installation ==
 
