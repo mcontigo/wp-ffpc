@@ -227,7 +227,7 @@ abstract class WP_FFPC_ABSTRACT {
 	 * callback function to add settings link to plugins page
 	 *
 	 * @param array $links Current links to add ours to
-	 *
+	 * @return array $links Current links
 	 */
 	public function plugin_settings_link ( $links ) {
 		$settings_link = '<a href="' . $this->settings_link . '">' . __translate__( 'Settings', 'wp-ffpc') . '</a>';
@@ -359,7 +359,7 @@ abstract class WP_FFPC_ABSTRACT {
 	 *
 	 * @param mixed $var Variable to dump
 	 * @param boolean $ret Return text instead of printing if true
-	 *
+	 * @return mixed $var Variable to dump
 	*/
 	protected function print_var ( $var , $ret = false ) {
 		if ( @is_array ( $var ) || @is_object( $var ) || @is_bool( $var ) )
@@ -401,7 +401,7 @@ abstract class WP_FFPC_ABSTRACT {
 	 * @param $print
 	 *  boolean: is true, the options will be printed, otherwise the string will be returned
 	 *
-	 * @return
+	 * @return mixed
 	 * 	prints or returns the options string
 	 *
 	 */
@@ -594,9 +594,9 @@ abstract class WP_FFPC_ABSTRACT {
 	 * display formatted alert message
 	 *
 	 * @param string $msg Error message
-	 * @param string $error "level" of error
+	 * @param mixed $level "level" of error
 	 * @param boolean $network WordPress network or not, DEPRECATED
-	 *
+	 * @return mixed
 	 */
 	static public function alert ( $msg, $level=LOG_WARNING, $network=false ) {
 		if ( empty($msg)) return false;
