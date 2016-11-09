@@ -150,7 +150,7 @@ if ( $wp_ffpc_backend->status() === false ) {
 include_once ('backends/mobile-detect.php');
 $mobile_detect = new Mobile_Detect;
 /* verify if mobile device (phones or tablets). */
-$wp_ffpc_keys =  ($mobile_detect->isMobile() ?
+$wp_ffpc_keys =  $mobile_detect->isMobile() ?
     array ( 'meta' => $wp_ffpc_config['prefix_meta_mobile'], 'data' => $wp_ffpc_config['prefix_data_mobile'] ) :
     array ( 'meta' => $wp_ffpc_config['prefix_meta'], 'data' => $wp_ffpc_config['prefix_data']);
 

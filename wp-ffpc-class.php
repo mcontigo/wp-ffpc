@@ -713,7 +713,8 @@ class WP_FFPC extends WP_FFPC_ABSTRACT {
 				</dd>
 
 				<dt>
-					<?php _e("Excludes", 'wp-ffpc'); ?></label>
+					<label><?php _e("Excludes", 'wp-ffpc'); ?></label>
+				</dt>
 				<dd>
 					<table style="width:100%">
 						<thead>
