@@ -70,7 +70,7 @@ else {
 }
 
 /* no cache for WooCommerce URL patterns */
-if ( isset($wp_ffpc_config['nocache_woocommerce']) && !empty($wp_ffpc_config['nocache_woocommerce']) && 
+if ( isset($wp_ffpc_config['nocache_woocommerce']) && !empty($wp_ffpc_config['nocache_woocommerce']) &&
      isset($wp_ffpc_config['nocache_woocommerce_url']) && trim($wp_ffpc_config['nocache_woocommerce_url']) ) {
 	$pattern = sprintf('#%s#', trim($wp_ffpc_config['nocache_woocommerce_url']));
 	if ( preg_match($pattern, $wp_ffpc_uri) ) {
@@ -149,10 +149,16 @@ if ( $wp_ffpc_backend->status() === false ) {
 /* include the mobile detect */
 include_once ('backends/mobile-detect.php');
 $mobile_detect = new Mobile_Detect;
+$wp_ffpc_keys =  array();
+
 /* verify if mobile device (phones or tablets). */
-$wp_ffpc_keys =  $mobile_detect->isMobile() ?
-    array ( 'meta' => $wp_ffpc_config['prefix_meta_mobile'], 'data' => $wp_ffpc_config['prefix_data_mobile'] ) :
-    array ( 'meta' => $wp_ffpc_config['prefix_meta'], 'data' => $wp_ffpc_config['prefix_data']);
+if($mobile_detect->isMobile()){
+	__wp_ffpc_debug__('Set the ffpc keys to the mobile version');
+	$wp_ffpc_keys = array ( 'meta' => $wp_ffpc_config['prefix_meta_mobile'], 'data' => $wp_ffpc_config['prefix_data_mobile'] );
+} else {
+	__wp_ffpc_debug__('Set the ffpc keys to the desktop version');
+	$wp_ffpc_keys = array( 'meta' => $wp_ffpc_config['prefix_meta'], 'data' => $wp_ffpc_config['prefix_data'] );
+}
 
 $wp_ffpc_values = array();
 
@@ -267,7 +273,7 @@ if ( isset($wp_ffpc_config['generate_time']) && $wp_ffpc_config['generate_time']
 	$mtime = explode ( " ", microtime() );
 	$wp_ffpc_gentime = ( $mtime[1] + $mtime[0] ) - $wp_ffpc_gentime;
 
-	$insertion = "\n<!-- WP-FFPC cache output stats\n\tcache engine: ". $wp_ffpc_config['cache_type'] ."\n\tUNIX timestamp: ". time() . "\n\tdate: ". date( 'c' ) . "\n\tfrom server: ". $_SERVER['SERVER_ADDR'] . " -->\n";
+	$insertion = "\n<!-- \n\tCache Engine: ". $wp_ffpc_config['cache_type'] ."\n\tDate: ". date( 'c' ) . " -->\n";
 	$index = stripos( $wp_ffpc_values['data'] , '</body>' );
 
 	$wp_ffpc_values['data'] = substr_replace( $wp_ffpc_values['data'], $insertion, $index, 0);
@@ -317,8 +323,8 @@ function wp_ffpc_callback( $buffer ) {
 	global $wp_ffpc_backend;
 	/* check is it's a redirect */
 	global $wp_ffpc_redirect;
-    /* check is it's a mobile version*/
-    global $mobile_detect;
+	/* check is it's a mobile version*/
+	global $mobile_detect;
 
 	/* no is_home = error, WordPress functions are not availabe */
 	if (!function_exists('is_home'))
@@ -469,8 +475,9 @@ function wp_ffpc_callback( $buffer ) {
 	if ( $wp_ffpc_config['generate_time'] == '1' && stripos($buffer, '</body>') ) {
 		global $wp_ffpc_gentime;
 
-        /* verify the device type to output into the generation stats */
-        $device_type = $mobile_detect -> isMobile() ? 'mobile': 'desktop';
+		/* verify the device type to output into the generation stats */
+		$device_type = $mobile_detect -> isMobile() ? 'mobile': 'desktop';
+		__wp_ffpc_debug__('The device type is: ' . $device_type);
 
 		$mtime = explode ( " ", microtime() );
 		$wp_ffpc_gentime = ( $mtime[1] + $mtime[0] )- $wp_ffpc_gentime;
